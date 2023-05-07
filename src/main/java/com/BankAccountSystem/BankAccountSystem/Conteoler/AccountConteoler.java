@@ -1,6 +1,7 @@
 package com.BankAccountSystem.BankAccountSystem.Conteoler;
 
 
+import com.BankAccountSystem.BankAccountSystem.Models.Account;
 import com.BankAccountSystem.BankAccountSystem.Services.AccountServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,11 @@ public class AccountConteoler {
         accountServices.createAccount(account_number ,balance, customer_id);
     }
 
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)
+    public Account getMarkById(@RequestParam Integer id) {
+        Account account = accountServices.getAccountById(id);
+        return account;
+    }
 
 
 

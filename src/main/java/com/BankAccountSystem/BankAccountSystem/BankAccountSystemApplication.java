@@ -6,8 +6,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @SpringBootApplication
-@EnableWebSecurity
-@EnableGlobalMethodSecurity
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity
 public class BankAccountSystemApplication {
 
 	public static void main(String[] args) {

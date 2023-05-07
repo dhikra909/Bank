@@ -26,5 +26,14 @@ public class AccountServices {
         accountRepositores.save(account);
     }
 
+    public Account getAccountById(Integer id) {
+        Account account = accountRepositores.getAccountById(id);
+        return account;
+    }
+
+
+
+
+
 
 }

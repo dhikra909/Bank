@@ -1,6 +1,8 @@
 package com.BankAccountSystem.BankAccountSystem.Conteoler;
 
 
+import com.BankAccountSystem.BankAccountSystem.Models.CreditCard;
+import com.BankAccountSystem.BankAccountSystem.Models.Customer;
 import com.BankAccountSystem.BankAccountSystem.Services.CustomeSerices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,11 @@ public class CustomeConteoler {
         customeSerices.createCustomer(first_name ,last_name, email, phone);
     }
 
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)
+    public Customer getCustomerById(@RequestParam Integer id) {
+        Customer customer = customeSerices.getCustomerdById(id);
+        return customer;
+    }
 
 
 

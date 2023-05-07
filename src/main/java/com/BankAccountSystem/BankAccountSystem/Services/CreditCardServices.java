@@ -27,5 +27,13 @@ public class CreditCardServices {
         creditCardRepositores.save(creditCard);
     }
 
+    public CreditCard getCreditCardById(Integer id) {
+        CreditCard creditCard = creditCardRepositores.getCreditCardById(id);
+        return creditCard;
 
-}
+
+
+
+
+
+}}

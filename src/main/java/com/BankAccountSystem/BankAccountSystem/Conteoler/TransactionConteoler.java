@@ -1,5 +1,7 @@
 package com.BankAccountSystem.BankAccountSystem.Conteoler;
 
+import com.BankAccountSystem.BankAccountSystem.Models.Loan;
+import com.BankAccountSystem.BankAccountSystem.Models.Transaction;
 import com.BankAccountSystem.BankAccountSystem.Services.TransactioServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,19 @@ public class TransactionConteoler {
    public void createTransactions(@RequestParam Date transacionDate, @RequestParam Double amount) throws ParseException {
       transactioServices.createTransactions(transacionDate ,amount);
    }
+
+   @RequestMapping(value = "/getById", method = RequestMethod.GET)
+   public Transaction getLoanById(@RequestParam Integer id) {
+      Transaction transaction = transactioServices.getTransactionById(id);
+      return transaction;
+   }
+
+
+
+
+
+
+
 
 
 }

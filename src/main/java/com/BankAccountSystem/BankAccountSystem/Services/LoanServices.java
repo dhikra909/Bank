@@ -20,7 +20,12 @@ public class LoanServices {
     }
 
 
+    public Loan getLoanById(Integer id) {
+        Loan loan = loanRepositores.getLoanById(id);
+        return loan;
 
+
+    }
 
 
 

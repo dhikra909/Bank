@@ -1,5 +1,7 @@
 package com.BankAccountSystem.BankAccountSystem.Conteoler;
 
+import com.BankAccountSystem.BankAccountSystem.Models.Account;
+import com.BankAccountSystem.BankAccountSystem.Models.CreditCard;
 import com.BankAccountSystem.BankAccountSystem.Services.CreditCardServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +23,11 @@ CreditCardServices creditCardServices;
         creditCardServices.createCreditCard(card_number ,credit_limit, customer_id);
     }
 
-
+    @RequestMapping(value = "/getById", method = RequestMethod.GET)
+    public CreditCard getCreditCardById(@RequestParam Integer id) {
+        CreditCard creditCard = creditCardServices.getCreditCardById(id);
+        return creditCard;
+    }
 
 
 
