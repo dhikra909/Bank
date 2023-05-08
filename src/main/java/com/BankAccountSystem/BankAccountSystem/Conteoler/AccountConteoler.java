@@ -28,6 +28,15 @@ public class AccountConteoler {
         return account;
     }
 
+    @RequestMapping("/updateAccount")
+    public Account updateAccount(@RequestParam Integer customer_id , @RequestParam Long account_number , @RequestParam Double balance){
+        return accountServices.updateAccount(customer_id , account_number , balance);
+    }
+
+
+
+
+
 
 
 }

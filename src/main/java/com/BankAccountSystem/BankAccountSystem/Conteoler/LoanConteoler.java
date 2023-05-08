@@ -31,6 +31,10 @@ public class LoanConteoler {
   return loan;
  }
 
+ @RequestMapping("/updateLoan")
+ public Loan updateLoan ( @RequestParam Integer id ,@RequestParam Double amount , @RequestParam Double interest_rate ){
+  return loanServices.updateLoan( id, amount , interest_rate );
+ }
 
 
 

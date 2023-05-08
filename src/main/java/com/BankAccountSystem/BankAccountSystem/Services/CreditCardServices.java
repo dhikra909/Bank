@@ -8,6 +8,8 @@ import com.BankAccountSystem.BankAccountSystem.Repositores.CustomeRepositores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 public class CreditCardServices {
 
@@ -30,10 +32,16 @@ public class CreditCardServices {
     public CreditCard getCreditCardById(Integer id) {
         CreditCard creditCard = creditCardRepositores.getCreditCardById(id);
         return creditCard;
+    }
+
+        public CreditCard updateCreditCard(Integer customer_id , Long card_number , Double credit_limit){
+            CreditCard creditCard = creditCardRepositores.findById(customer_id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
+            creditCard.setCard_number(card_number);
+            creditCard.setCredit_limit(credit_limit);
+            return creditCardRepositores.save(creditCard);
+        }
 
 
 
 
-
-
-}}
+}

@@ -31,7 +31,10 @@ public class TransactionConteoler {
       return transaction;
    }
 
-
+   @RequestMapping("/updateTransaction")
+   public Transaction updateTransaction ( @RequestParam Integer id ,@RequestParam Date transacionDate , @RequestParam Double amount ){
+      return transactioServices.updateTransaction( id, transacionDate , amount );
+   }
 
 
 

@@ -6,6 +6,7 @@ import com.BankAccountSystem.BankAccountSystem.Repositores.TransactioRepositores
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Date;
 
 @Service
@@ -27,6 +28,16 @@ public class TransactioServices {
 
 
     }
+
+    public Transaction updateTransaction(Integer id , Date transacionDate , Double amount ){
+        Transaction transaction = transactioRepositores.findById(id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
+        transaction.setTransacionDate(transacionDate);
+        transaction.setAmount(amount);
+        return transactioRepositores.save(transaction);
+    }
+
+
+
 
 
 }

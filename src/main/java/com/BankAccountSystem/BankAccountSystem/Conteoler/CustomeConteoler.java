@@ -29,6 +29,14 @@ public class CustomeConteoler {
         return customer;
     }
 
+    @RequestMapping("/updateCustomer")
+    public Customer updateCustomer ( @RequestParam Integer id ,@RequestParam String first_name , @RequestParam String last_name , @RequestParam String email , @RequestParam String phone  ){
+        return customeSerices.updateCustomer( id, first_name , last_name , email, phone );
+    }
+
+    
+
+
 
 
 }

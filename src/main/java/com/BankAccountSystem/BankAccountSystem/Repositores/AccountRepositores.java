@@ -14,4 +14,11 @@ public interface AccountRepositores extends JpaRepository<Account, Integer > {
     @Query(value = "SELECT s from Account s where s.id = :id")
     Account getAccountById(@Param("id") Integer id);
 
+
+
+
+
+
+
+
 }
