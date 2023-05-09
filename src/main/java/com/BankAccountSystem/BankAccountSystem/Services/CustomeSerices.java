@@ -29,7 +29,7 @@ public class CustomeSerices {
     }
 
     public Customer updateCustomer(Integer id , String first_name , String last_name , String email , String phone){
-        Customer customer = customeRepositores.findById(id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
+        Customer customer = customeRepositores.getCustomerById(id);
         customer.setFirst_name(first_name);
         customer.setLast_name(last_name);
         customer.setEmail(email);
@@ -37,7 +37,9 @@ public class CustomeSerices {
         return customeRepositores.save(customer);
     }
 
-
+    public void deleteCustomerById(Integer id) {
+        customeRepositores.getCustomerById(id);
+    }
 
 
 

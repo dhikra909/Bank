@@ -34,7 +34,11 @@ public class CustomeConteoler {
         return customeSerices.updateCustomer( id, first_name , last_name , email, phone );
     }
 
-    
+
+    @RequestMapping(value = "deleteCustomerById", method = RequestMethod.POST)
+    public void deleteCustomerById(@RequestParam Integer id) {
+        customeSerices.getCustomerdById(id);
+    }
 
 
 

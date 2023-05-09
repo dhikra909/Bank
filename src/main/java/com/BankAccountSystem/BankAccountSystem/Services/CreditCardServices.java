@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Date;
 
 @Service
 public class CreditCardServices {
@@ -34,14 +35,15 @@ public class CreditCardServices {
         return creditCard;
     }
 
-        public CreditCard updateCreditCard(Integer customer_id , Long card_number , Double credit_limit){
-            CreditCard creditCard = creditCardRepositores.findById(customer_id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
-            creditCard.setCard_number(card_number);
-            creditCard.setCredit_limit(credit_limit);
-            return creditCardRepositores.save(creditCard);
-        }
-
-
+    public CreditCard updateCreditCard(Integer customer_id , Integer card_number , Double balance){
+        CreditCard creditCard = creditCardRepositores.getCreditCardById(card_number);
+        creditCard.setBalance(balance);
+        creditCard.setUpdatedDate(new Date());
+        return creditCardRepositores.save(creditCard);
+    }
+    public void deleteCCreditCardById(Integer id) {
+        creditCardRepositores.getCreditCardById(id);
+    }
 
 
 }

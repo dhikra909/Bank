@@ -28,13 +28,15 @@ public class LoanServices {
     }
 
     public Loan updateLoan(Integer id , Double amount , Double interest_rate ){
-        Loan loan = loanRepositores.findById(id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
+        Loan loan = loanRepositores.getLoanById(id);
         loan.setAmount(amount);
         loan.setInterest_rate(interest_rate);
         return loanRepositores.save(loan);
     }
 
-
+    public void deleteLoanById(Integer id) {
+        loanRepositores.getLoanById(id);
+    }
 
 
 

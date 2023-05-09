@@ -27,15 +27,20 @@ public class TransactioServices {
         return transaction;
 
 
+
     }
 
     public Transaction updateTransaction(Integer id , Date transacionDate , Double amount ){
-        Transaction transaction = transactioRepositores.findById(id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
+        Transaction transaction = transactioRepositores.getTransactionById(id);
         transaction.setTransacionDate(transacionDate);
         transaction.setAmount(amount);
         return transactioRepositores.save(transaction);
+
     }
 
+    public void deleteTransactionById(Integer id) {
+        transactioRepositores.getTransactionById(id);
+    }
 
 
 

@@ -31,10 +31,14 @@ CreditCardServices creditCardServices;
 
 
     @RequestMapping("/updateCreditCard")
-    public CreditCard updateCreditCard(@RequestParam Integer customer_id , @RequestParam Long card_number , @RequestParam Double credit_limit){
+    public CreditCard updateCreditCard(@RequestParam Integer customer_id , @RequestParam Integer card_number , @RequestParam Double credit_limit){
         return creditCardServices.updateCreditCard(customer_id , card_number , credit_limit);
     }
 
+    @RequestMapping(value = "deleteCCreditCardById", method = RequestMethod.POST)
+    public void deleteCreditCardById(@RequestParam Integer id) {
+        creditCardServices.getCreditCardById(id);
+    }
 
 
 

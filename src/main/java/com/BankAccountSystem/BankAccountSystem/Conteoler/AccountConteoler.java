@@ -29,14 +29,14 @@ public class AccountConteoler {
     }
 
     @RequestMapping("/updateAccount")
-    public Account updateAccount(@RequestParam Integer customer_id , @RequestParam Long account_number , @RequestParam Double balance){
+    public Account updateAccount(@RequestParam Integer customer_id , @RequestParam Integer account_number , @RequestParam Double balance){
         return accountServices.updateAccount(customer_id , account_number , balance);
     }
 
-
-
-
-
+    @RequestMapping(value = "deleteCAccountById", method = RequestMethod.POST)
+    public void deleteAccountById(@RequestParam Integer id) {
+        accountServices.deleteAccountById(id);
+    }
 
 
 }

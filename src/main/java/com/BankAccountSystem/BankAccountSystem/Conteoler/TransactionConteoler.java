@@ -37,7 +37,10 @@ public class TransactionConteoler {
    }
 
 
-
+   @RequestMapping(value = "deleteTransactionById", method = RequestMethod.POST)
+   public void deleteTransactionById(@RequestParam Integer id) {
+      transactioServices.getTransactionById(id);
+   }
 
 
 

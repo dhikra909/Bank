@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.Date;
 
 @Service
 public class AccountServices {
@@ -29,16 +30,25 @@ public class AccountServices {
     }
 
     public Account getAccountById(Integer id) {
-        Account account = accountRepositores.getAccountById(id);
+        Account account = accountRepositores.findById(id).get();
         return account;
     }
 
-    public Account updateAccount(Integer customer_id , Long account_number , Double balance){
-        Account account = accountRepositores.findById(customer_id).orElseThrow(() -> new EntityNotFoundException("Customer not found"));
-        account.setAccount_number(account_number);
+    public Account updateAccount(Integer customer_id , Integer account_number , Double balance){
+        Account account = accountRepositores.getByAccountNumber(account_number);
         account.setBalance(balance);
+        account.setUpdatedDate(new Date());
         return accountRepositores.save(account);
     }
+
+    public void deleteAccountById(Integer id) {
+      accountRepositores.getAccountById(id);
+//        account.setId(false);
+//        accountRepositores.save(account);
+    }
+
+
+
 
 
 

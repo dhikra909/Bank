@@ -38,7 +38,10 @@ public class LoanConteoler {
 
 
 
-
+ @RequestMapping(value = "deleteCustomerById", method = RequestMethod.POST)
+ public void deleteLoanById(@RequestParam Integer id) {
+  loanServices.getLoanById(id);
+ }
 
 
 
