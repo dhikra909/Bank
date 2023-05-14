@@ -23,7 +23,8 @@ public interface TransactioRepositores extends JpaRepository<Transaction, Intege
     @Query(value = "UPDATE Transaction s SET s.isActive=0 where s.id = :id")
     Transaction getTransactionById(@Param("id") Integer id);
 
-
+    @Query(value = "update Transaction acc Set acc.isActive = false")
+    void deleteAllTransaction();
 
 
 

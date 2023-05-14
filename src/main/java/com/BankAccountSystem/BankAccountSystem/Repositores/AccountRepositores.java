@@ -22,7 +22,8 @@ public interface AccountRepositores extends JpaRepository<Account, Integer > {
     @Query(value = "SELECT ac from Account ac WHERE ac.account_number =:accountNumber")
     Account getByAccountNumber(@Param("accountNumber") Integer accountNumber);
 
-
+    @Query(value = "update Account acc Set acc.isActive = false")
+    void deleteAllAccounts();
 
 
 

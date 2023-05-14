@@ -24,7 +24,8 @@ public interface CustomeRepositores extends JpaRepository<Customer, Integer > {
     Customer getCustomerById(@Param("id") Integer id);
 
 
-
+    @Query(value = "update Customer acc Set acc.isActive = false")
+    void deleteAllCustomer();
 
 
 

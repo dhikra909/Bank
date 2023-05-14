@@ -42,6 +42,11 @@ public class TransactionConteoler {
       transactioServices.getTransactionById(id);
    }
 
+   @RequestMapping(value = "deleteAllTransaction", method = RequestMethod.POST)
+   public void deleteAllTransaction() {
+      transactioServices.deleteAllTransaction();
+   }
+
 
 
 

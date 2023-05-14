@@ -42,13 +42,14 @@ public class AccountServices {
     }
 
     public void deleteAccountById(Integer id) {
-      accountRepositores.getAccountById(id);
-//        account.setId(false);
-//        accountRepositores.save(account);
+        accountRepositores.getAccountById(id);
+
     }
 
 
-
+    public void deleteAllAccounts() {
+        accountRepositores.deleteAllAccounts();
+    }
 
 
 

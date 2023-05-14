@@ -23,7 +23,8 @@ public interface LoanRepositores extends JpaRepository<Loan, Integer > {
     Loan getLoanById(@Param("id") Integer id);
 
 
-
+    @Query(value = "update Loan acc Set acc.isActive = false")
+    void deleteAllLoan();
 
 
 

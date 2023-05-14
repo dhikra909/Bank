@@ -44,7 +44,10 @@ public class LoanConteoler {
  }
 
 
-
+ @RequestMapping(value = "deleteAllLoan", method = RequestMethod.POST)
+ public void deleteAllLoan() {
+  loanServices.deleteAllLoan();
+ }
 
 
 }

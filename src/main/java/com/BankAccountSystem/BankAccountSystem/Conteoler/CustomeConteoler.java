@@ -40,7 +40,10 @@ public class CustomeConteoler {
         customeSerices.getCustomerdById(id);
     }
 
-
+    @RequestMapping(value = "deleteAllCustomer", method = RequestMethod.POST)
+    public void deleteAllCustomer() {
+        customeSerices.deleteAllCustomer();
+    }
 
 
 }

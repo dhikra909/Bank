@@ -25,6 +25,9 @@ public interface CreditCardRepositores  extends JpaRepository<CreditCard, Intege
     CreditCard getByCreditCardNumber(@Param("card_number") Integer card_number);
 
 
+    @Query(value = "update CreditCard acc Set acc.isActive = false")
+    void deleteAllCreditCard();
+
 
 
 

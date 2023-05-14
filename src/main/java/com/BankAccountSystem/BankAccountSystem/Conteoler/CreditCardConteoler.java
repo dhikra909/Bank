@@ -40,6 +40,12 @@ CreditCardServices creditCardServices;
         creditCardServices.getCreditCardById(id);
     }
 
+    @RequestMapping(value = "deleteAllCreditCard", method = RequestMethod.POST)
+    public void deleteAllCreditCard() {
+        creditCardServices.deleteAllCreditCard();
+    }
+
+
 
 
 }

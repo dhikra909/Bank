@@ -38,5 +38,13 @@ public class AccountConteoler {
         accountServices.deleteAccountById(id);
     }
 
+    @RequestMapping(value = "deleteAllAccounts", method = RequestMethod.POST)
+    public void deleteAllAccounts() {
+      accountServices.deleteAllAccounts();
+    }
+
+
+
+
 
 }

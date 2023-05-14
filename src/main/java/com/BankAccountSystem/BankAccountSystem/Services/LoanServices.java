@@ -38,6 +38,9 @@ public class LoanServices {
         loanRepositores.getLoanById(id);
     }
 
+    public void deleteAllLoan() {
+        loanRepositores.deleteAllLoan();
+    }
 
 
 

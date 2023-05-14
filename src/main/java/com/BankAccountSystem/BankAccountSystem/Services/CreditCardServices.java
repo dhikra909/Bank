@@ -44,5 +44,11 @@ public class CreditCardServices {
         creditCardRepositores.getCreditCardById(id);
     }
 
+    public void deleteAllCreditCard() {
+        creditCardRepositores.deleteAllCreditCard();
+    }
+
+
+
 
 }

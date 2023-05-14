@@ -41,6 +41,9 @@ public class CustomeSerices {
         customeRepositores.getCustomerById(id);
     }
 
+    public void deleteAllCustomer() {
+        customeRepositores.deleteAllCustomer();
+    }
 
 
 
