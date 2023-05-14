@@ -35,10 +35,9 @@ public class CreditCardServices {
         return creditCard;
     }
 
-    public CreditCard updateCreditCard(Integer customer_id , Integer card_number , Double balance){
+    public CreditCard updateCreditCard(Integer customer_id , Integer card_number , Double  credit_limit){
         CreditCard creditCard = creditCardRepositores.getCreditCardById(card_number);
-        creditCard.setBalance(balance);
-        creditCard.setUpdatedDate(new Date());
+        creditCard.setCredit_limit(credit_limit);
         return creditCardRepositores.save(creditCard);
     }
     public void deleteCCreditCardById(Integer id) {
