@@ -22,7 +22,9 @@ public class TransactioServices {
         transactioRepositores.save(transaction);
     }
 
-   
+    public Transaction getTransactionById(Integer id) {
+        Transaction transaction = transactioRepositores.getTransactionById(id);
+        return transaction;
 
 
 
