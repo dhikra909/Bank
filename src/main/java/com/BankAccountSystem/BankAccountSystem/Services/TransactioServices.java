@@ -30,11 +30,7 @@ public class TransactioServices {
 
     }
 
-    public Transaction updateTransaction(Integer id , Date transacionDate , Double amount ){
-        Transaction transaction = transactioRepositores.getTransactionById(id);
-        transaction.setTransacionDate(transacionDate);
-        transaction.setAmount(amount);
-        return transactioRepositores.save(transaction);
+   
 
     }
 
