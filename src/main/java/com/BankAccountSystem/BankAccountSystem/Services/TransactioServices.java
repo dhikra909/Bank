@@ -38,7 +38,9 @@ public class TransactioServices {
 
     }
 
-   
+    public void deleteTransactionById(Integer id) {
+        transactioRepositores.getTransactionById(id);
+    }
 
     public void deleteAllTransaction() {
         transactioRepositores.deleteAllTransaction();
